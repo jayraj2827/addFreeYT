@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Youtube Friday</title>
+  <link rel="stylesheet" href="/Y_Play/Y_Play.css">
+  <link rel="shortcut icon" href="http://localhost:2827/Assets/Images/Friday_Robo.ico"
+      type="image/png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <h1><img id=logo alt="youtube" src="http://localhost:2827/Assets/Images/Friday_Robo.ico"> 
+    FRIDAY Adds-less Youtube</h1>
+    <div id="header-controls">
+      <input type="text" id="search-bar" placeholder="Search YouTube Videos">
+      <button onclick="searchVideos()">Search</button>
+      <button onclick="goHome()">Home</button>
+    </div>
+    <div class="theme">
+      <button id="toggleThemeButton" class="icon-btn hover-pulse"
+        title="Toggle Theme"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <div id="main-container">
+    <!-- Left: Video Player -->
+    <div id="video-player-container">
+      <iframe id="video-player" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
+      <div class="video-details">
+        <h2 id="video-title"></h2>
+        <p id="video-description"></p>
+      </div>
+    </div>
+
+    <!-- Right: Video Results -->
+    <div id="video-results-container">
+      <h2>Related Videos</h2>
+      <div id="video-results"></div>
+    </div>
+  </div>
+
+  <script src="/Y_Play/Y_Play.js"></script>
+</body>
+</html>
+

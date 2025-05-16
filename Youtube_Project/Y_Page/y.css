@@ -1,0 +1,251 @@
+/* ===================== */
+/*       Root Variables  */
+/* ===================== */
+:root {
+  --bg: #f0f0f5;
+  --text: #333;
+  --primary: #007bff;
+  --secondary: #e0e0e0;
+  --header-bg: #ffffff;
+  --panel-bg: #ffffff;
+  --border: #ddd;
+  --glow: rgba(0, 0, 0, 0.5);
+  --animate: white;
+  --assistant-bg: #f7f7f7;
+  --assistant-text: #333;
+  --user-bg: #e0f7ff;
+  --user-text: #333;
+  --code-bg: #2d2d2d;
+  --code-text: #f8f8f2;
+}
+
+/* ===================== */
+/*   Dark Mode Variables */
+/* ===================== */
+body.dark-mode {
+  --bg: #121212;
+  --text: #eee;
+  --primary: #00b4ff;
+  --secondary: #444;
+  --header-bg: #1e1e1e;
+  --panel-bg: #1e1e1e;
+  --border: #333;
+  --glow: rgba(0, 180, 255, 0.8);
+  --animate: black;
+  --assistant-bg: #2a2a2a;
+  --assistant-text: #eee;
+  --user-bg: #003b5c;
+  --user-text: #fff;
+  --code-bg: #1e1e1e;
+}
+
+/* ===================== */
+/*     Global Styles     */
+/* ===================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s, color 0.5s;
+  overflow-x: hidden;
+}
+
+/* ===================== */
+/*        Header         */
+/* ===================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-bg);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 20px var(--glow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: fadeInDown 0.7s ease;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* ===================== */
+/*   Search Container    */
+/* ===================== */
+#search-container {
+  /* margin-top: 1rem; */
+  text-align: center;
+}
+
+#search-bar {
+  padding: 0.5rem;
+  width: 300px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--header-bg);
+  color: var(--text);
+  transition: box-shadow 0.3s;
+}
+
+#search-bar:focus {
+  outline: none;
+  box-shadow: 0 0 15px var(--glow);
+}
+
+/* ===================== */
+/*       Buttons         */
+/* ===================== */
+button {
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+#logo {
+  height: 2rem;
+  width: 2rem;
+  filter: drop-shadow(0 0 10px var(--glow));
+  transition: transform 0.3s;
+}
+
+
+/* ===================== */
+/*      Main Content     */
+/* ===================== */
+main {
+  padding: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+#video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ===================== */
+/*     Video Item        */
+/* ===================== */
+.video-item {
+  background-color: var(--secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(25% - 1rem);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.video-item img {
+  width: 100%;
+  height: auto;
+}
+
+.video-info {
+  padding: 1rem;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+}
+
+/* ===================== */
+/*  Layout for y.html      */
+/* ===================== */
+#main-container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+#video-player-container {
+  width: 60%;
+}
+
+#video-results-container {
+  width: 40%;
+  overflow-y: auto;
+  background-color: var(--panel-bg);
+  padding: 1rem;
+  border-radius: 1rem;
+  max-height: 80vh;
+  box-shadow: inset 0 0 10px var(--glow);
+}
+
+/* ===================== */
+/*   Video Results Items  */
+/* ===================== */
+.video-result-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--assistant-bg);
+  border-radius: 8px;
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  animation: fadeInUp 0.8s ease;
+}
+
+.video-result-item:hover {
+  background-color: var(--user-bg);
+  transform: scale(1.03);
+}
+
+.video-result-item img {
+  width: 120px;
+  height: 80px;
+  border-radius: 4px;
+}
+
+.video-result-item h4 {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* ===================== */
+/*     Animations        */
+/* ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }   to { opacity: 1; transform: scale(1); }}
+  
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }   to { opacity: 1; transform: translateY(0); }}
+  
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }   to { opacity: 1; transform: translateY(0); }}
+  
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }   to { opacity: 1; transform: translateY(0); }}
+
+/* ===================== */
+/*    Custom Scrollbar   */
+/* ===================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--panel-bg);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--glow);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
