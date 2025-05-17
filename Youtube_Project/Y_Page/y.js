@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyBA5qstWQ6tn8m96j--uoLsCd8VHNeID6U'; // Your YouTube API key
+const API_KEY = CONFIG.YOUTUBEAPI
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchVideos(); // Fetch all videos on page load
